@@ -15,8 +15,8 @@ const FEEDS = [
   { name: "Qiita Trends", url: "https://qiita.com/popular-items/feed.atom" },
   { name: "Zenn  Trends", url: "https://zenn.dev/feed" },
   {
-    name: "日経クロステック",
-    url: "https://xtech.nikkei.com/rss/xtech-it.rdf",
+    name: "ギズモード",
+    url: "https://www.gizmodo.jp/index.xml",
   },
 ];
 
