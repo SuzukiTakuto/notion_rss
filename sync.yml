@@ -1,0 +1,20 @@
+name: Sync RSS to Notion
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # 毎時0分に実行（好みに調整可）
+  workflow_dispatch: {}   # 手動実行ボタンも使えるように
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install
+      - run: node index.js
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
